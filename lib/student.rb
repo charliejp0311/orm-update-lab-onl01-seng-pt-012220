@@ -29,7 +29,7 @@ class Student
     if self.id
         self.update
     else
-      
+
     end
     sql = <<-SQL
       INSERT INTO students(name, grade)
