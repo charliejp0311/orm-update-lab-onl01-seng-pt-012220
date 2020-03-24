@@ -40,7 +40,7 @@ class Student
   end
 
   def update
-    sql = <<-SQL UPDATE songs SET name = ?, grade = ? WHERE id = ?SQL
+    sql = "UPDATE songs SET name = ?, grade = ? WHERE id = ?"
     DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
 
