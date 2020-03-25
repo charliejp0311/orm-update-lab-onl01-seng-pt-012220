@@ -54,7 +54,9 @@ class Student
       FROM students
       WHERE name = ?;
     SQL
-    DB[:conn].execute(sql, self.name)
+    DB[:conn].execute(sql, self.name).map do |student|
+      self.new_from_db(student)
+    end
   end
 
   def update
